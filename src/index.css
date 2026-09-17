@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #0A0A0A;
+    color: #FFFFFF;
+    overflow-x: hidden;
+  }
+}
+
+/* Dot matrix pattern */
+.bg-grid-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Architectural giant watermark */
+.hero-watermark {
+  font-size: clamp(20rem, 38vw, 36rem);
+  line-height: 0.8;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.04);
+  color: transparent;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Vertical sideways text orientation */
+.writing-vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+/* Continuous smooth rotation for badges */
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 22s linear infinite;
+}
+
+.animate-spin-orbital {
+  animation: spinSlow 16s linear infinite;
+}
+
+/* Continuous marquee ticker animations */
+@keyframes tickerLeft {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes tickerRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+.animate-ticker-left {
+  animation: tickerLeft 30s linear infinite;
+}
+
+.animate-ticker-right {
+  animation: tickerRight 34s linear infinite;
+}
+
+/* Pause on hover */
+.animate-ticker-left:hover,
+.animate-ticker-right:hover {
+  animation-play-state: paused;
+}
+
+/* Glass card styling */
+.glass-card {
+  background: rgba(18, 18, 18, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
